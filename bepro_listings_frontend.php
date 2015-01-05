@@ -573,7 +573,7 @@
 		if(empty($listing_template_file))$listing_template_file = plugin_dir_path( __FILE__ ).'/templates/listings/generic_1.php';
 		
 		//allow other features to tie in
-		$get_listing_template = apply_filters("bepro_listings_change_list_template", $listing_template_file,$result);
+		$get_listing_template = plugin_dir_path( __FILE__ ) . apply_filters("bepro_listings_change_list_template", $listing_template_file,$result);
 		if($get_listing_template != -1)$listing_template_file = $get_listing_template;
 		
 		ob_start();
